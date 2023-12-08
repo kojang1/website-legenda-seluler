@@ -1,0 +1,535 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*====== Navigasi =======*/
+header{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(2rem + 1rem);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    transition: 0.5s ease;
+    transition-property: height, background;
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+#check {
+    display: none;
+}
+
+header .icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+header .navigation{
+    position: relative;
+
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 10px;
+    text-shadow: 0 5px 25px rgb(2, 2, 2, 0.5);
+    margin-left: 30px;
+    transition: .5s;
+}
+
+header .navigation .navigation-items a:hover,
+header .navigation .navigation-items a.active {
+    color: #000;
+}
+
+header .navigation .navigation-items a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    z-index: -1;
+    transform: scale(0);
+    transition: .5s;
+}
+
+header .navigation .navigation-items a:hover span,
+header .navigation .navigation-items a.active span {
+    transform: scale(1);
+    opacity: 1;
+}
+
+section {
+    padding: 100px 200px;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #4b4c4d;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    background: #302e2e;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0,5s;
+}
+
+button:hover span{
+    width: 100%;
+}
+
+button:hover {
+    border: none;
+}
+
+/*====== Banner ======*/
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #302e2e;
+}
+
+.banner video{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background-color: #302e2e;
+    opacity: .7;
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+/*====Content=====*/
+.container {
+    font-size: 16px;
+    margin: 0;
+    background: #302e2e;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.ui-card {
+    width: 350px;
+    background: radial-gradient(#111 50%,#000 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.ui-card img {
+    transform: scale(1.3);
+    transition: all 0.3s ease-out;
+}
+
+.ui-card:hover img {
+    transform: scale(1.1) translateY(-20px);
+    opacity: 0.3;
+}
+
+.description {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+
+.description h3 {
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0 0 20px;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+.description p {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.3s ease-out 0.2;
+}
+
+.ui-card:hover .description h3 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.ui-card:hover .description p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/*====Content Part2=====*/
+.container {
+    font-size: 16px;
+    margin: 0;
+    background: #302e2e;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.ui-card {
+    width: 350px;
+    background: radial-gradient(#111 50%,#000 100%);
+    overflow: hidden;
+    position: relative;
+}
+
+.ui-card img {
+    transform: scale(1.3);
+    transition: all 0.3s ease-out;
+}
+
+.ui-card:hover img {
+    transform: scale(1.1) translateY(-20px);
+    opacity: 0.3;
+}
+
+.description {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+
+.description h3 {
+    font-weight: 700;
+    font-size: 32px;
+    margin: 0 0 20px;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+.description p {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.3s ease-out 0.2;
+}
+
+.ui-card:hover .description h3 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.ui-card:hover .description p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/*======== Prev Next Page Button =======*/
+ul {
+    background: #302e2e;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: none;
+}
+
+ul li {
+    list-style: none;
+    line-height: 50px;
+    margin: 0 50px;
+}
+
+ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 50%;
+}
+
+ul li.page {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+ul li.page:hover a,
+ul li.page.active a {
+    background: #d4205c;
+    color: #fff;
+    font-weight: bold;
+}
+
+ul li.prev:hover a,
+ul li.next:hover a {
+    color: #d4205c;
+}
+
+ul li.prev {
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+ul li.next {
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*======== Footer =======*/
+.footer {
+    padding: 20px 0;
+    background-color: #aaa;
+}
+
+.footer .copyright {
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+}
+
+@media only screen and (min-width: 2687px){
+    header{
+        height: calc(5rem + 3rem);
+    }
+
+    header .navigation .navigation-items a{
+        font-size: 2em;
+        padding: 15px 20px;
+        margin-left: 25px;
+    }
+
+    .logo {
+        width: 175px;
+    }
+
+    .content h1 {
+        font-size: 150px;
+        margin-top: 80px;
+    }
+    
+    .content p {
+        font-size: 40px;
+    }
+    
+    button {
+        width: 335px;
+    }
+
+    .ui-card {
+        width: 600px;
+    }
+
+    .description h3 {
+        font-size: 75px;
+    }
+    
+    .description p {
+        font-size: 30px;
+    }
+
+    ul li.prev {
+        margin-right: 100px;
+        font-size: 50px;
+    }
+    
+    ul li.next {
+        font-size: 50px;
+    }
+
+    ul li.page {
+        width: 59px;
+        font-size: 50px;
+        height: 115px;
+    }
+
+    ul li {
+        margin: 0 75px;
+    }
+    
+}
+
+@media only screen and (max-width: 425px){
+    header .navigation-items {
+        position: fixed;
+        display: none;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .3);
+        backdrop-filter: blur(50px);
+        transition: 0.5s ease;
+    }
+
+    #check:checked~.navigation-items {
+        display: block;
+        height: 12rem;
+    }
+
+    header .navigation .navigation-items a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.3rem 0;
+        text-align: center;
+    }
+
+    header .navigation .navigation-items a span {
+        border-radius: 0;
+    }
+
+    header .icons {
+        display: block;
+        font-size: 2.5em;
+        color: #fff;
+        margin-top: -24px ;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    #check {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+
+    .banner{
+        display: absolute;
+    }
+    .logo {
+        width: 77px;
+        margin-left: -50px;
+    }
+
+    .content h1 {
+        font-size: 50px;
+        margin-top: 80px;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding-top: 30px;
+        align-items: center;
+    }
+
+    ul {
+        margin: -7px 0;
+    }
+
+    ul li {
+    line-height: 50px;
+    margin: 0 0;
+    }
+    
+    ul li.prev {
+        margin-right: 10px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    
+    ul li.next {
+        margin-right: 10px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+}

@@ -1,0 +1,406 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*====== Navigasi =======*/
+header{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(2rem + 1rem);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    transition: 0.5s ease;
+    transition-property: height, background;
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+header .navigation{
+    position: relative;
+
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 10px;
+    text-shadow: 0 5px 25px rgb(2, 2, 2, 0.5);
+    margin-left: 30px;
+    transition: .5s;
+}
+
+header .navigation .navigation-items a:hover,
+header .navigation .navigation-items a.active {
+    color: #000;
+}
+
+header .navigation .navigation-items a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    z-index: -1;
+    transform: scale(0);
+    transition: .5s;
+}
+
+header .navigation .navigation-items a:hover span,
+header .navigation .navigation-items a.active span {
+    transform: scale(1);
+    opacity: 1;
+}
+
+section {
+    padding: 100px 200px;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #4b4c4d;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    background: #302e2e;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0,5s;
+}
+
+button:hover span{
+    width: 100%;
+}
+
+button:hover {
+    border: none;
+}
+
+/*====== Banner ======*/
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #302e2e;
+}
+
+.banner video{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background-color: #302e2e;
+    opacity: .7;
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+/*======== Bagian About =======*/
+.tab-content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: rgb(51, 31, 4);
+}
+
+.tab{
+    max-width: 1100px;
+    padding: 30px 50px;
+}
+
+.tab .row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    gap: 60px;
+}
+
+.tab .img-card{
+    position: relative;
+    width: 450px;
+    max-width: 450px;
+    border-radius: 50%;
+    border: 7px solid rgb(51, 31, 4);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 25px rgba(255, 255, 255, 0.1);
+}
+
+.tab .img-card img{
+    width: 100%;
+}
+
+.right-column{
+    max-width: 800px;
+}
+
+.info .city, .info .description p{
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.info .city{
+    font-size: 2em;
+}
+
+.info::before{
+    z-index: 888;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(transparent, #e8e8e8);
+}
+/*======== Image Slider======*/
+
+/*======== Footer =======*/
+.footer {
+    padding: 40px 0;
+    background-color: #ffffff;
+}
+
+.footer .social {
+    display: flex;
+    padding-bottom: 25px;
+    color: #4b4c4d;
+    list-style: none;
+    justify-content: center;
+} 
+
+.footer .social a {
+    font-size: 24px;
+    color: inherit;
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+}
+
+.footer .social a:hover {
+    opacity: 0.9;
+}
+
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+} 
+
+.footer ul li a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.footer ul li a:hover {
+    opacity: 1;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/*======== Resposive Web =======*/
+@media only screen and (min-width: 2687px){
+    header{
+        height: calc(5rem + 3rem);
+    }
+
+    header .navigation .navigation-items a{
+        font-size: 2em;
+        padding: 15px 20px;
+        margin-left: 25px;
+    }
+
+    .logo {
+        width: 175px;
+    }
+
+    .content h1 {
+        font-size: 150px;
+        margin-top: 80px;
+    }
+    
+    .content p {
+        font-size: 40px;
+    }
+    
+    button {
+        width: 335px;
+    }
+    
+    .tab{
+        max-width: 3000px;
+        padding: 200px 50px;
+    }
+
+    .tab .row{
+        gap: 150px;
+    }
+    
+
+    .tab .img-card img{
+        width: 100%;
+        border-radius: 100%;
+    }
+
+    .tab .img-card{
+        width: 700px;
+        max-width: 700px;
+        border-radius: 500px;
+    }
+    
+    .right-column{
+        max-width: 1000px;
+    }
+    
+    .info .city, .info .description p{
+        margin-bottom: 15px;
+        font-size: 30px;
+    }
+    
+    .info .city{
+        font-size: 5em;
+    }
+
+    .campus{
+        padding-top: 250px;
+    }
+
+    .country{
+        font-size: 10em;
+    }
+
+    .footer .social a {
+        font-size: 50px;
+        width: 94px;
+        height: 40px;
+    }
+
+    .footer ul li a {
+        font-size: 25px;
+    }
+
+    .footer .copyright {
+        font-size: 20px;
+
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .logo {
+        width: 77px;
+        margin-left: -50px;
+    }
+
+    .content h1 {
+        font-size: 50px;
+        margin-top: 80px;
+    }
+
+    .info .city, .info .description p{
+        margin-left: 15px;
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    .info .city{
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .tab .img-card{
+        width: 277px;
+    }
+
+    .tab .row{
+        flex-wrap: wrap;
+    }
+}

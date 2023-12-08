@@ -1,0 +1,510 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*====== Navigasi =======*/
+header{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(2rem + 1rem);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    transition: 0.5s ease;
+    transition-property: height, background;
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+#check {
+    display: none;
+}
+
+header .icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+header .navigation{
+    position: relative;
+
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: #fff;
+    font-size: 0.9em;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 10px;
+    text-shadow: 0 5px 25px rgb(2, 2, 2, 0.5);
+    margin-left: 30px;
+    transition: .5s;
+}
+
+header .navigation .navigation-items a:hover,
+header .navigation .navigation-items a.active {
+    color: #000;
+}
+
+header .navigation .navigation-items a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    z-index: -1;
+    transform: scale(0);
+    transition: .5s;
+}
+
+header .navigation .navigation-items a:hover span,
+header .navigation .navigation-items a.active span {
+    transform: scale(1);
+    opacity: 1;
+}
+
+section {
+    padding: 100px 200px;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #4b4c4d;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span {
+    background: #302e2e;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0,5s;
+}
+
+button:hover span{
+    width: 100%;
+}
+
+button:hover {
+    border: none;
+}
+
+
+/*====== Banner ======*/
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #302e2e;
+}
+
+.banner video{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    background-color: #302e2e;
+    opacity: .7;
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+/*======== Card Hover ========*/
+.campus{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    background-image: linear-gradient(#111e27,#070c10)
+}
+
+.country{
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 5px 25px #664194;
+}
+
+.container {
+    width: 1000px;
+    display: flex;
+  
+    .card {
+      margin: 1em;
+  
+      .card-img-top {
+        position: relative;
+        z-index: 2;
+        width: 302px;
+        height: 222px;
+        transform: translateY(52%);
+        transition: 0.5s;
+      }
+  
+      .card-body {
+        z-index: 1;
+        box-sizing: border-box;
+        padding: 1.25em;
+        height: 220px;
+        background: #221531;
+        box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.056);
+        transform: translateY(-50%);
+        transition: 0.5s;
+  
+        .card-title {
+          margin: 0 0 0.75em 0;
+          font-size: 2em;
+          font-weight: bold;
+          line-height: 1.2;
+          color: #fff;
+        }
+  
+        .card-text {
+          margin: 0 0 1em 0;
+          color: #fff;
+        }
+  
+        .btn {
+          padding: 0.375em 0.75em;
+          color: white;
+          text-decoration: none;
+          line-height: 1.5;
+          border: 1px solid white;
+          border-radius: 0.25em;
+          transition: 0.5s;
+  
+          &:hover {
+            color: white;
+            background: #111e27;
+          }
+        }
+      }
+  
+      &:hover {
+        .card-img-top {
+          transform: translateY(2%);
+        }
+  
+        .card-body {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  /*======== Prev Next Page Button =======*/
+ul {
+    background: #070c10;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 20px;
+    border-radius: none;
+}
+
+ul li {
+    list-style: none;
+    line-height: 50px;
+    margin: 0 50px;
+}
+
+ul li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 50%;
+}
+
+ul li.page {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+ul li.page:hover a,
+ul li.page.active a {
+    background: #d4205c;
+    color: #fff;
+    font-weight: bold;
+}
+
+ul li.prev:hover a,
+ul li.next:hover a {
+    color: #d4205c;
+}
+
+ul li.prev {
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+ul li.next {
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*======== Footer =======*/
+.footer {
+    padding: 20px 0;
+    background-color: #aaa;
+}
+
+.footer .copyright {
+    text-align: center;
+    font-size: 13px;
+    color: #fff;
+}
+
+/*======== Resposive Web =======*/
+@media only screen and (min-width: 2687px){
+  header{
+      height: calc(5rem + 3rem);
+  }
+
+  header .navigation .navigation-items a{
+      font-size: 2em;
+      padding: 15px 20px;
+      margin-left: 25px;
+  }
+
+  .logo {
+      width: 175px;
+  }
+
+  .content h1 {
+      font-size: 150px;
+      margin-top: 80px;
+  }
+  
+  .content p {
+      font-size: 40px;
+  }
+  
+  button {
+      width: 335px;
+  }
+
+  .campus{
+    padding-top: 250px;
+}
+
+.country{
+    font-size: 10em;
+}
+
+.container {
+    margin-left: 448px;
+    margin-right: 800px;
+    gap: 30px;
+
+    .card {
+        margin: 1em;
+    
+        .card-img-top {
+          width: 500px;
+          height: 400px;
+        }
+
+        .card-body {
+            height: 300px;
+        }
+
+        .card-title {
+            font-size: 2.5em;
+        }
+
+          .card-text {
+            margin: 0 0 2em 0;
+            font-size: 25px;
+          }
+        }
+    }
+
+    ul li.prev {
+        margin-right: 100px;
+        font-size: 50px;
+    }
+    
+    ul li.next {
+        font-size: 50px;
+    }
+
+    ul li.page {
+        width: 59px;
+        font-size: 50px;
+        height: 115px;
+    }
+
+    ul li {
+        margin: 0 75px;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    header .navigation-items {
+        position: fixed;
+        display: none;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .3);
+        backdrop-filter: blur(50px);
+        transition: 0.5s ease;
+    }
+
+    #check:checked~.navigation-items {
+        display: block;
+        height: 12rem;
+    }
+
+    header .navigation .navigation-items a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.3rem 0;
+        text-align: center;
+    }
+
+    header .navigation .navigation-items a span {
+        border-radius: 0;
+    }
+
+    header .icons {
+        display: block;
+        font-size: 2.5em;
+        color: #fff;
+        margin-top: -24px ;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    #check {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .logo {
+        width: 77px;
+        margin-left: -50px;
+    }
+
+    .content h1 {
+        font-size: 50px;
+        margin-top: 80px;
+    }
+
+    .campus{
+        width: 100%;
+        padding-top: 50px;
+    }
+
+    .country{
+        font-size: 2em;
+        margin-left: -195px;
+        margin-right: -195px;
+    }
+
+    .container {
+        width: 285px;
+        flex-wrap: wrap;
+        margin-left: -144px;
+    }
+
+    ul {
+        margin: -7px 0;
+    }
+
+    ul li {
+    line-height: 50px;
+    margin: 0 0;
+    }
+    
+    ul li.prev {
+        margin-right: 10px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    
+    ul li.next {
+        margin-right: 10px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+}
